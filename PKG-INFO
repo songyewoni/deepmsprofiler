@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: DeepMSProfiler
+Version: 1.0.1
+Summary: A tool for mining global features from raw metabolomics data
+Home-page: https://github.com/yjdeng9/DeepMSProfiler
+Author: Yongjie Deng
+Author-email: dengyj9@mail2.sysu.edu.cn
+Requires-Python: >=3.6
+Requires-Dist: pyteomics
+Requires-Dist: pyteomics
+Requires-Dist: lxml
+Requires-Dist: tensorflow==2.2
+Requires-Dist: keras==2.3
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: scikit-image
+Requires-Dist: Pillow
+Requires-Dist: matplotlib
+Requires-Dist: efficientnet
+Requires-Dist: tqdm
+Requires-Dist: umap-learn

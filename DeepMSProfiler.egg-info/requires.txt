@@ -1,0 +1,14 @@
+pyteomics
+pyteomics
+lxml
+tensorflow==2.2
+keras==2.3
+pandas
+numpy
+scikit-learn
+scikit-image
+Pillow
+matplotlib
+efficientnet
+tqdm
+umap-learn
