@@ -3,11 +3,9 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 from keras.optimizers import SGD, RMSprop, Adam, Nadam, Adagrad, Adadelta, Adamax
 
-from keras.layers.core import Dense, Flatten
-from keras.layers.convolutional import AveragePooling2D, MaxPooling2D
-from keras.layers import Input,Conv2D
+from keras.layers import Input, Conv2D, Dense, Flatten, AveragePooling2D, MaxPooling2D
 from keras.models import Model
-from keras.utils.vis_utils import plot_model
+from keras.utils import plot_model
 
 from keras.applications.resnet50 import ResNet50
 from keras.applications.vgg16 import VGG16
