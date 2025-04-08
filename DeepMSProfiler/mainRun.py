@@ -166,7 +166,8 @@ def step1_old(args, job_dir):
 
 def load_jobs_data(job_dir, num_classes=3):
     match_df = pd.read_csv(os.path.join(job_dir, 'match_data_label.csv'))
-    label2num = {label: i for i, label in enumerate(match_df['Label'].unique())}
+    # 데이터셋에 있는 라벨들을 모두 strip()한 후 고유 값으로 dictionary를 만듭니다.
+    label2num = {label.strip(): i for i, label in enumerate(match_df['Label'].unique())}
     match_df['label_num'] = [label2num[i.strip()] for i in match_df['Label']]
 
     train_data = []
