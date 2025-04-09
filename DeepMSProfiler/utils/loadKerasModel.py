@@ -164,5 +164,5 @@ if __name__ == '__main__':
     # model_pretrain = load_imagenet_model('ResNet50', input_shape=(1024, 1024, 3), pool_size=3)
     # model_pretrain.summary()
 
-    model_pretrain = load_imagenet_model('DenseNet121', input_shape=(1024, 1024, 3), pool_size=3)
+    model_pretrain = load_imagenet_model('DenseNet121', input_shape=(341,341, 3), pool_size=3)
     model_pretrain.summary()
