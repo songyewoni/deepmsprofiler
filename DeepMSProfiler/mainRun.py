@@ -13,7 +13,6 @@ from pyteomics import mzml
 from .modelTrain import run_model_with_args
 from .modelPred import pred_by_args
 from .modelFeature import get_feature_with_args
-from distutils.dir_util import copy_tree
 
 import shutil
 
@@ -92,7 +91,7 @@ def step1(args, job_dir):
 
     for file_name in match_df['FilePath']:
         if file_name.endswith('.npy'):
-            copy_tree(os.path.join(data_dir, file_name), os.path.join(job_data_dir, file_name))
+            shutil.copy(os.path.join(data_dir, file_name), os.path.join(job_data_dir, file_name))
         elif file_name.endswith('.mzML'):
             raw_mzml = mzml.MzML(os.path.join(data_dir, file_name))
             intensity_matrix = dataTools.mzml2itmx(raw_mzml)
