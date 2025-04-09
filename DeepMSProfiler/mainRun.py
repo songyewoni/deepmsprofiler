@@ -350,7 +350,6 @@ def args_setting():
 
 
 if __name__ == '__main__':
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     print("Start in %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     main()
     print("End in %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
