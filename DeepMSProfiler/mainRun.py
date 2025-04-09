@@ -217,7 +217,7 @@ def step2_train(args, job_dir,train_data, train_label, train_samples):
     optimizer = args.optimizer
     lr = args.lr
     batch_size = args.batch_size
-    input_shape = (train_data.shape[0], train_data.shape[1], train_data.shape[2])
+    input_shape = (train_data.shape[1], train_data.shape[2], train_data.shape[3])
 
     save_dir = os.path.join(job_dir, 'models_run')
 
