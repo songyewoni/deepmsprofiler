@@ -26,7 +26,7 @@ def args_setting():
     parser.add_argument('-arch', type=str, dest='architecture', default='DenseNet121')
     parser.add_argument('-nc',dest='num_classes', default=3)
     parser.add_argument('-pretrain',dest='pretrain_path', default=None)
-    parser.add_argument('-lr', type=float, dest='learning_rate', default=1e-4)
+    parser.add_argument('-lr', type=float, dest='lr', default=1e-4)
     parser.add_argument('-opt', type=str, dest='optimizer', default='adam')
     parser.add_argument('-batch', type=int, dest='batch_size', default=8)
     parser.add_argument('-epoch', type=int, dest='epoch', default=200)
