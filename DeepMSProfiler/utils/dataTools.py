@@ -54,8 +54,9 @@ def mzml2itmx(raw_mzml):
     for rt_time in rt_idx:
         mz_array = get_bin_peak(mz_start, mz_gap, mz_end, raw_mzml, rt_time)
         intensities.append(mz_array)
-        
-    return np.stack(np.array(intensities)*3, axis=-1)
+
+    arr = np.array(intensities)
+    return np.stack([arr]*3, axis=-1)
 
 
 def pool_model(shape=(341, 341, 3), pool_size=3):
