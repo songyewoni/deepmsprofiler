@@ -43,10 +43,10 @@ def mzML2npy(raw_mzml):
 def mzml2itmx(raw_mzml):
     rt_start = 0.5
     rt_gap = 0.016
-    rt_end = rt_start+1024*rt_gap
+    rt_end = rt_start+341*rt_gap
     mz_start = 50
     mz_gap = 1
-    mz_end = mz_start+1024*mz_gap
+    mz_end = mz_start+341*mz_gap
 
     rt_idx = np.arange(rt_start, rt_end, rt_gap)
     # print(len(rt_idx))
@@ -54,10 +54,11 @@ def mzml2itmx(raw_mzml):
     for rt_time in rt_idx:
         mz_array = get_bin_peak(mz_start, mz_gap, mz_end, raw_mzml, rt_time)
         intensities.append(mz_array)
-    return np.array(intensities)
+        
+    return np.stack(np.array(intensities)*3, axis=-1)
 
 
-def pool_model(shape=(1024, 1024, 3), pool_size=3):
+def pool_model(shape=(341, 341, 3), pool_size=3):
     input_tensor = layers.Input(shape=shape)
     x = layers.MaxPooling2D(pool_size=(pool_size, pool_size))(input_tensor)
     model = Model(input_tensor, x)
