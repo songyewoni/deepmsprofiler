@@ -37,7 +37,6 @@ def get_bin_peak(start, width, end, raw_mzml, tt):
 
 def mzML2npy(raw_mzml):
     itmx = mzml2itmx(raw_mzml)
-    itmx = np.stack([itmx,itmx,itmx], axis=-1)
     np.save(os.path.join(out_dir, 'itmx.npy'), itmx)
     return itmx
 
@@ -55,7 +54,10 @@ def mzml2itmx(raw_mzml):
     for rt_time in rt_idx:
         mz_array = get_bin_peak(mz_start, mz_gap, mz_end, raw_mzml, rt_time)
         intensities.append(mz_array)
-    return np.array(intensities)
+
+    arr = np.array(intensities)
+    arr = np.stack([arr,arr,arr],axis=-1)
+    return arr
 
 
 def pool_model(shape=(341, 341, 3), pool_size=3):
