@@ -56,7 +56,9 @@ def mzml2itmx(raw_mzml):
         intensities.append(mz_array)
 
     arr = np.array(intensities)
-    arr = np.stack([arr,arr,arr],axis=-1)
+    print(arr.shape)
+    arr = np.stack([arr,arr,arr])
+    print(arr.shape)
     return arr
 
 
