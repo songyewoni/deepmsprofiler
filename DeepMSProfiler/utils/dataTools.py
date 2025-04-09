@@ -56,7 +56,7 @@ def mzml2itmx(raw_mzml):
         intensities.append(mz_array)
 
     arr = np.array(intensities)
-    return np.stack([arr]*3, axis=-1)
+    return np.stack([arr]*3)
 
 
 def pool_model(shape=(341, 341, 3), pool_size=3):
