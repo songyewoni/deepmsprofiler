@@ -98,25 +98,25 @@ def add_new_last_layer(base_model, num_classes):
 
 def compile_model(model, optimizer='adam',lr=1e-3, epsilon=0.001):
     if optimizer == 'sgd':
-        model.compile(optimizer=SGD(lr=lr, momentum=0.9, decay=0.0001, nesterov=True),
+        model.compile(optimizer=SGD(learning_rate=lr, momentum=0.9, decay=0.0001, nesterov=True),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'rmsprop':
-        model.compile(optimizer=RMSprop(lr=lr, rho=0.9, epsilon=epsilon, decay=0.0),
+        model.compile(optimizer=RMSprop(learning_rate=lr, rho=0.9, epsilon=epsilon, decay=0.0),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'adagrad':
-        model.compile(optimizer=Adagrad(lr=lr, epsilon=epsilon, decay=0.0),
+        model.compile(optimizer=Adagrad(learning_rate=lr, epsilon=epsilon, decay=0.0),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'adadelta':
-        model.compile(optimizer=Adadelta(lr=lr, rho=0.95, epsilon=epsilon, decay=0.0),
+        model.compile(optimizer=Adadelta(learning_rate=lr, rho=0.95, epsilon=epsilon, decay=0.0),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'adam':
-        model.compile(optimizer=Adam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, decay=0.0, amsgrad=False),
+        model.compile(optimizer=Adam(learning_rate=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, decay=0.0, amsgrad=False),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'adamax':
-        model.compile(optimizer=Adamax(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, decay=0.0),
+        model.compile(optimizer=Adamax(learning_rate=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, decay=0.0),
                       loss='categorical_crossentropy', metrics=['accuracy'])
     if optimizer == 'nadam':
-        model.compile(optimizer=Nadam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, schedule_decay=0.004),
+        model.compile(optimizer=Nadam(learning_rate=lr, beta_1=0.9, beta_2=0.999, epsilon=epsilon, schedule_decay=0.004),
                       loss='categorical_crossentropy', metrics=['accuracy'])
 
     return model
