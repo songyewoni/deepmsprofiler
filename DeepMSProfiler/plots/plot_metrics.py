@@ -59,9 +59,9 @@ def plot_auc_curve(y_true, y_score, save=None):
     fpr1, tpr1, thresholds1 = roc_curve(y_true[:, 1], y_score[:, 1])
     fpr2, tpr2, thresholds2 = roc_curve(y_true[:, 2], y_score[:, 2])
 
-    plt.plot(fpr0, tpr0, lw=2, label='Healthy(AUC = %0.2f)' % (auc(fpr0,tpr0)))
-    plt.plot(fpr1, tpr1, lw=2, label='Benign (AUC = %0.2f)' % (auc(fpr1, tpr1)))
-    plt.plot(fpr2, tpr2, lw=2, label='Malignant (AUC = %0.2f)' % (auc(fpr2, tpr2)))
+    plt.plot(fpr0, tpr0, lw=2, label='Pistachio(AUC = %0.2f)' % (auc(fpr0,tpr0)))
+    plt.plot(fpr1, tpr1, lw=2, label='TC (AUC = %0.2f)' % (auc(fpr1, tpr1)))
+    plt.plot(fpr2, tpr2, lw=2, label='Synthetic_MT (AUC = %0.2f)' % (auc(fpr2, tpr2)))
 
     plt.plot([0, 1], [0, 1], linestyle='--', lw=1.5, color='grey', label='Random', alpha=.5)
     plt.xlabel('False Positive Rate',fontsize=20)
