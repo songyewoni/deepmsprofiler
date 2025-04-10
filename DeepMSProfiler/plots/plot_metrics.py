@@ -25,7 +25,7 @@ def plot_confusion_matrix(y_true, y_pred_calss, save=None):
     plt.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
     # plt.imshow(cm, interpolation='nearest', cmap='Reds')
 
-    classes = ["Health","Lung Nodule","Lung Cancer"]
+    classes = ["Pistachio","TC","Synthetic_MT"]
     tick_marks = np.arange(len(classes))
     plt.xticks(tick_marks, classes, rotation=0)
     plt.yticks(tick_marks, classes)
